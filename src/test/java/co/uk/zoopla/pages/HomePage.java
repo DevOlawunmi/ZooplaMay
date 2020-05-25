@@ -22,6 +22,19 @@ public class HomePage extends BasePage {
     private WebElement noOfBeds;
     @FindBy(id = "search-submit")
     private WebElement searchButton;
-    @FindBy (className = "ui-button-primary ui-cookie-accept-all-medium-large")
+    @FindBy (xpath = "//*[@id=\"cookie-consent-form\"]/div/div/div/button[2]")
     private WebElement acceptCookies;
+    @FindBy (className = "ui-cookie-consent-main")
+    private WebElement cookiePage;
+
+    public void enterLocation(String location){
+        searchField.sendKeys(location);
+    }
+    public void waitForCookiePage(){
+        cookiePage.isDisplayed();
+    }
+    public void acceptCookies(){
+        acceptCookies.click();
+    }
+
 }

@@ -1,18 +1,22 @@
 package co.uk.zoopla.stepDefinitions;
 
 import co.uk.zoopla.pages.BasePage;
+import co.uk.zoopla.pages.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.support.PageFactory;
 
 public class SearchForSaleStepDefs extends BasePage {
+    HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     @Given("I navigate to zoopla homepage")
     public void i_navigate_to_zoopla_homepage() {
 launchURL();
     }
 
     @When("I enter a {string} in the search text box")
-    public void i_enter_a_in_the_search_text_box(String string) {
+    public void i_enter_a_in_the_search_text_box(String location) {
+        homePage.enterLocation(location);
 
     }
 
@@ -43,7 +47,7 @@ launchURL();
 
     @When("I accept all cookies")
     public void i_accept_all_cookies() {
-
+homePage.acceptCookies();
     }
 
     @Then("a list of {string} in {string} are displayed")
