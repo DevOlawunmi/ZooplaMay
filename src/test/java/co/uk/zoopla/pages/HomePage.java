@@ -28,6 +28,8 @@ public class HomePage extends BasePage {
     private WebElement cookiePage;
 
     public void enterLocation(String location){
+        waitForElementToBeDisplayed(searchField);
+        searchField.clear();
         searchField.sendKeys(location);
     }
     public void waitForCookiePage(){
@@ -36,5 +38,21 @@ public class HomePage extends BasePage {
     public void acceptCookies(){
         acceptCookies.click();
     }
+    public void selectMinimumPrice(String miniPrice){
+      selectElementByText(minPrice,miniPrice);
+    }
+    public void selectMaximumPrice(String maxiPrice){
+        selectElementByText(maxPrice, maxiPrice);
+    }
+    public void selectNoOfBeds(String beds){
+        selectElementByText(noOfBeds,beds);
+    }
+    public void selectPropertyType(String property){
+        selectElementByText(propertyType,property);
+    }
+public SearchResultPage clickOnSearchButton(){
+        searchButton.click();
+        return new SearchResultPage(driver);
+}
 
 }
