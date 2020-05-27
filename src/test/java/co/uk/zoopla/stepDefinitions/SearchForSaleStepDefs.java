@@ -53,7 +53,10 @@ homePage.acceptCookies();
     }
 
     @Then("a list of {string} in {string} are displayed")
-    public void a_list_of_in_are_displayed(String string, String string2) {
+    public void a_list_of_in_are_displayed(String property, String location) {
+        searchResultPage.isCorrectURLDisplayedForSearch(location);
+        searchResultPage.isPageTitleDisplayed(property);
+        searchResultPage.pageTitleContainsLocation(location);
 
     }
 

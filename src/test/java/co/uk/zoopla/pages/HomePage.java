@@ -39,7 +39,7 @@ public class HomePage extends BasePage {
         acceptCookies.click();
     }
     public void selectMinimumPrice(String miniPrice){
-      selectElementByText(minPrice,miniPrice);
+      selectElementByText(minPrice, miniPrice);
     }
     public void selectMaximumPrice(String maxiPrice){
         selectElementByText(maxPrice, maxiPrice);
