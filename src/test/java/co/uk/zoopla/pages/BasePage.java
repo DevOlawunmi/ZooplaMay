@@ -8,9 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage extends DriverLib {
     public Select select;
-    String BASE_URL = "https://www.zoopla.co.uk/";
+
 
     public void launchURL(){
+        String BASE_URL = "https://www.zoopla.co.uk/";
         driver.navigate().to(BASE_URL);
     }
     public void selectElementByValue(WebElement element, String value){

@@ -27,12 +27,12 @@ public class Browsers extends DriverLib{
         switch (browser){
             case "Chrome": driver = initChrome();
             break;
-//            case "Firefox": driver = initFirefox();
-//            break;
-//            case "Headless": driver = initHeadless();
-//            break;
-//            default:driver = initHeadless();
-//            break;
+            case "Firefox": driver = initFirefox();
+            break;
+            case "Headless": driver = initHeadless();
+            break;
+            default:driver = initHeadless();
+            break;
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
